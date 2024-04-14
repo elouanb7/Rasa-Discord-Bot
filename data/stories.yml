@@ -1,0 +1,23 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: reservation ok
+  steps:
+    - intent: bonjour
+    - action: utter_on_bonjour
+    - intent: checkroom
+    - action: utter_doing_check
+    - action: utter_check_room
+    - intent: nbrperson
+    - action: utter_has_room
+    - intent: room_valid
+    - intent: room_service
+    - action: utter_room_service
+    - intent: content
+    - action: utter_reservation_ok

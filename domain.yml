@@ -1,0 +1,57 @@
+version: "3.1"
+
+intents:
+  - greet
+  - bonjour
+  - checkroom
+  - nbrperson
+  - room_valid
+  - room_service
+  - content
+  - au_revoir
+
+actions:
+  - utter_greet
+  - utter_on_bonjour
+  - utter_check_room
+  - utter_doing_check
+  - utter_no_room
+  - utter_no_room_today
+  - utter_has_room
+  - utter_room_service
+  - utter_reservation_ok
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_on_bonjour:
+  - text: "Bonjour, comment puis-je vous renseigner ?"
+
+  utter_check_room:
+  - text: "Oui, il me reste quelques chambres de disponible, pour combien de personnes voulez-vous réserver ?"
+
+  utter_doing_check:
+  - text: "Je vais regarder les chambres qu'il me reste"
+
+  utter_no_room:
+  - text: "Je suis désolé, je n'ai plus de chambre de disponible"
+
+  utter_no_room_today:
+  - text: "Je suis désolé, je n'ai pas de chambre de disponible ce soir"
+
+  utter_has_room:
+  - text: "J'ai une chambre de disponible qui répond à vos critères, la chambre est à 90€ la nuit, est ce que cela vous convient ?"
+
+  utter_room_service:
+  - text: "Non, le room service n'est pas compris dans le prix de la chambre, cependant, le petit déjeuner dans la salle commune est offert"
+
+  utter_reservation_ok:
+  - text: "La chambre est réservé à votre nom, vous pouvez venir récupérer les clés dès 17h !"
+
+  utter_au_revoir:
+  - text: "Au revoir !"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,10 @@
+version: "3.1"
+
+rules:
+
+- rule: Dis au revoir quand l'utilisateur dit au revoir
+  steps:
+  - intent: au_revoir
+  - action: utter_au_revoir
+
+

@@ -1,0 +1,56 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+
+- intent: bonjour
+  examples: |
+    - Bonjour
+    - Salut
+
+- intent: checkroom
+  examples: |
+    - Avez-vous une chambre de disponible pour ce soir ?
+    - Avez-vous une chambre disponible pour demain soir ?
+
+- intent: nbrperson
+  examples: |
+    - Je cherche une chambre pour 3 personnes avec 2 lits
+    - Je cherche une chambre pour 3 personnes
+    - Je cherche une chambre avec 2 lits
+
+- intent: room_valid
+  examples: |
+    - Oui, la chambre me convient parfaitement !
+    - Oui, cela me convient
+    - Je vous la prends
+
+- intent: room_service
+  examples: |
+    - Est-ce que le room service est compris dans le tarif ?
+    - Est-ce qu'il y a un room service compris dans le tarif ?
+
+- intent: content
+  examples: |
+    - Très bien, je vous confirme la réservation de la chambre
+    - Merci pour les informations, je vous prends la chambre
+
+- intent: au_revoir
+  examples: |
+    - Au revoir
+    - A bientôt
