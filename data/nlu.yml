@@ -1,54 +1,96 @@
 version: "3.1"
 
 nlu:
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-
-
 - intent: bonjour
   examples: |
     - Bonjour
     - Salut
+    - Salutation
+    - Salam
 
-- intent: checkroom
+- intent: checktable
   examples: |
-    - Avez-vous une chambre de disponible pour ce soir ?
-    - Avez-vous une chambre disponible pour demain soir ?
+    - Est-ce qu'il vous reste de la place ?
+    - Est-ce que vous êtes complet ?
 
-- intent: nbrperson
+- intent: doreservationtoday
   examples: |
-    - Je cherche une chambre pour 3 personnes avec 2 lits
-    - Je cherche une chambre pour 3 personnes
-    - Je cherche une chambre avec 2 lits
+    - Je voudrais reserver une table pour ce soir
+    - Je voudrais reserver une table pour la fin de soirée
 
-- intent: room_valid
+- intent: saynamereservation
   examples: |
-    - Oui, la chambre me convient parfaitement !
+    - Bessettes pour le nom de reservation
+    - Henaff pour le nom de reservation
+
+- intent: saynombrepers
+  examples: |
+    - Pour 3 personnes 
+    - Pour 4 personnes
+
+- intent: sayphonenumber
+  examples: |
+    - Voici mon numéro de téléphone : 0666666666
+    - Mon numéro de téléphone: 0666666666
+
+- intent: saybabychair
+  examples: |
+    - J'ai un bébé en bas âge, est-ce que c'est possible d'avoir une chaise pour enfant ?
+    - J'ai un bébé, est-ce que cela est possible de lui prévoir une chaise pour enfant ?
+
+- intent: askmenudujour
+  examples: |
+    - Pourrais-je avoir le menu du jour ?
+    - Est-ce que vous pouvez me donner le menu du jour ?
+
+- intent: askallergies
+  examples: |
+    - Est-ce que vous pouvez me donner la liste des allergènes s'il vous plaît
+    - Est-ce qu'il y a des allergènes dans les plats du menu ?
+
+- intent: cancelreservation
+  examples: |
+    - Je voudrais annuler ma réservation 
+
+- intent: cancelreservationtoday
+  examples: |
+    - C'est la reservation de ce soir.
+    - La reservation de ce soir
+
+- intent: cancelreservationname
+  examples: |
+    - La reservation est au nom de Henaff
+    - La reservation est au nom de Bessettes
+
+- intent: cancelreservationok
+  examples: |
+    - Merci d'avoir annuler ma reservation
+    - Je vous remercie d'avoir annuler la reservation
+
+- intent: allgood
+  examples: |
+    - Je n'ai plus de question, tout est parfait, merci
+    - Je n'ai plus de question, merci
+
+- intent: table_valid
+  examples: |
+    - La table me convient
     - Oui, cela me convient
-    - Je vous la prends
-
-- intent: room_service
-  examples: |
-    - Est-ce que le room service est compris dans le tarif ?
-    - Est-ce qu'il y a un room service compris dans le tarif ?
+    - OK, nickel
 
 - intent: content
   examples: |
-    - Très bien, je vous confirme la réservation de la chambre
-    - Merci pour les informations, je vous prends la chambre
+    - Très bien, je vous confirme la réservation de la table
+    - Merci pour les informations, je vous prends la table
+
+- intent: remerciement
+  examples: |
+    - Je vous remercie
+    - Merci beaucoup
+
+- intent: au_revoir_today
+  examples: |
+    - A ce soir
 
 - intent: au_revoir
   examples: |

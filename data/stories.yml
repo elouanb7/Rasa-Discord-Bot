@@ -2,22 +2,41 @@ version: "3.1"
 
 stories:
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-
 - story: reservation ok
   steps:
     - intent: bonjour
     - action: utter_on_bonjour
-    - intent: checkroom
-    - action: utter_doing_check
-    - action: utter_check_room
-    - intent: nbrperson
-    - action: utter_has_room
-    - intent: room_valid
-    - intent: room_service
-    - action: utter_room_service
+    - intent: checktable
+    - action: utter_checktable
+    - intent: doreservationtoday
+    - action: utter_take_name
+    - intent: saynamereservation
+    - action: utter_ask_nombrepers
+    - intent: saynombrepers
+    - action: utter_take_phone
+    - intent: sayphonenumber
+    - action: utter_ask_anythingelse
+    - intent: askmenudujour
+    - action: utter_say_menu_jour
+    - intent: askallergies
+    - action: utter_say_allergies
+    - action: utter_ask_anythingelse
+    - intent: allgood
     - intent: content
-    - action: utter_reservation_ok
+    - action: utter_table_valid
+    - intent: au_revoir_today
+
+
+- story: cancel reservation
+  steps:
+    - intent: bonjour
+    - action: utter_on_bonjour
+    - intent: cancelreservation
+    - action: utter_ask_when
+    - intent: cancelreservationtoday
+    - action: utter_ask_name_reservation
+    - intent: cancelreservationname
+    - action: utter_cancel_ok
+    - intent: cancelreservationok
+    - intent: remerciement
+    - action: utter_aurevoir
