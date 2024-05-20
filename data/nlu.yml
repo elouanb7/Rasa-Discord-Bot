@@ -135,23 +135,11 @@ nlu:
 
 - intent: saybabychair
   examples: |
-      - Le commentaire : [J'ai un bébé en bas âge, est-ce possible d'avoir une chaise pour enfant ?](commentaire)
-      - Le commentaire : [J'ai un bébé, est-ce possible de lui prévoir une chaise pour enfant ?](commentaire)
-      - Le commentaire : [Nous venons avec un bébé, pouvez-vous prévoir une chaise pour enfant ?](commentaire)
-      - Le commentaire : [Pourriez-vous préparer une chaise haute pour notre bébé ?](commentaire)
-      - Le commentaire : [Est-ce que vous avez des chaises pour bébé ?](commentaire)
-      - Le commentaire : [Pouvons-nous avoir une chaise haute pour notre bébé ?](commentaire)
-      - Le commentaire : [Avez-vous des chaises pour enfant disponibles ?](commentaire)
-      - Le commentaire : [Nous avons un bébé, auriez-vous une chaise haute disponible ?](commentaire)
-      - Le commentaire : [Est-il possible d'avoir une chaise pour enfant ? Nous venons avec un bébé.](commentaire)
-      - Le commentaire : [Pour notre bébé, pourriez-vous prévoir une chaise haute ?](commentaire)
-      - Le commentaire : [Nous avons un tout-petit avec nous, avez-vous des chaises pour bébé ?](commentaire)
-      - Le commentaire : [Avez-vous des chaises hautes pour les enfants ?](commentaire)
-      - Le commentaire : [Pour notre enfant, est-ce que vous avez des sièges adaptés ?](commentaire)
-      - Le commentaire : [Nous venons avec notre bébé, pourrions-nous avoir une chaise haute ?](commentaire)
-      - Le commentaire : [Est-ce que vous avez des chaises pour les petits ?](commentaire)
-      - Le commentaire : [Pour notre bébé, pouvons-nous avoir une chaise adaptée ?](commentaire)
-      - Le commentaire : [Y a-t-il des chaises hautes pour les tout-petits ?](commentaire)
+      - J'ai un bébé en bas âge, est-ce possible d'avoir une [chaise pour enfant](commentaire) ?
+      - J'ai un bébé, est-ce possible de lui prévoir une [chaise pour enfant ?](commentaire)
+      - Nous venons avec un bébé, pouvez-vous prévoir une [chaise pour enfant ?](commentaire)
+      - Pourriez-vous préparer une chaise haute pour notre [bébé](commentaire) ?
+      - Est-ce que vous avez des chaises pour [bébé](commentaire) ?
 
 - intent: askmenudujour
   examples: |

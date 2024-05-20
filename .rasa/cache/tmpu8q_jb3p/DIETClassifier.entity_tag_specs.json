@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-commentaire",
+      "2": "I-commentaire",
+      "3": "L-commentaire",
+      "4": "U-commentaire",
+      "5": "B-heure",
+      "6": "I-heure",
+      "7": "L-heure",
+      "8": "U-heure",
+      "9": "B-name",
+      "10": "I-name",
+      "11": "L-name",
+      "12": "U-name",
+      "13": "B-phone_number",
+      "14": "I-phone_number",
+      "15": "L-phone_number",
+      "16": "U-phone_number",
+      "17": "B-place",
+      "18": "I-place",
+      "19": "L-place",
+      "20": "U-place",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-commentaire": 1,
+      "I-commentaire": 2,
+      "L-commentaire": 3,
+      "U-commentaire": 4,
+      "B-heure": 5,
+      "I-heure": 6,
+      "L-heure": 7,
+      "U-heure": 8,
+      "B-name": 9,
+      "I-name": 10,
+      "L-name": 11,
+      "U-name": 12,
+      "B-phone_number": 13,
+      "I-phone_number": 14,
+      "L-phone_number": 15,
+      "U-phone_number": 16,
+      "B-place": 17,
+      "I-place": 18,
+      "L-place": 19,
+      "U-place": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]
