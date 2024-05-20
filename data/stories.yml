@@ -9,22 +9,51 @@ stories:
     - intent: checktable
     - action: utter_checktable
     - intent: doreservationtoday
+      entities:
+        - heure: 21h
+    - slot_was_set:
+        - heure_reservation: 21h
+    - action: utter_heure_noted
     - action: utter_take_name
     - intent: saynamereservation
+      entities:
+        - name: Thomas
+    - slot_was_set:
+        - reservation_name: Thomas
+    - action: utter_confirm_name_stored
     - action: utter_ask_nombrepers
     - intent: saynombrepers
+      entities:
+        - place: '4'
+    - slot_was_set:
+        - nbr_place_reservation: '4'
+    - action: utter_confirm_nbr_place_stored
     - action: utter_take_phone
     - intent: sayphonenumber
+      entities:
+        - phone_number: '0666666666'
     - action: utter_ask_anythingelse
     - intent: askmenudujour
     - action: utter_say_menu_jour
     - intent: askallergies
     - action: utter_say_allergies
     - action: utter_ask_anythingelse
-    - intent: allgood
+    - intent: getlinktofullmenu
+    - action: utter_send_link_full_menu
+    - action: utter_ask_anythingelse
+    - intent: add_comment
+    - action: utter_ask_comment
+    - intent: saybabychair
+      entities:
+        - commentaire: est-ce qu'il est possible d'avoir une chaise pour bébé ?
+    - slot_was_set:
+        - table_reservation_comment: 'est-ce qu il est possible d avoir une chaise pour bébé ?'
+    - action: utter_comment_added
+    - action: utter_ask_anythingelse
     - intent: content
     - action: utter_table_valid
-    - intent: au_revoir_today
+    - action: utter_show_reservation_info
+    - intent: remerciement
 
 
 - story: cancel reservation
@@ -40,3 +69,17 @@ stories:
     - intent: cancelreservationok
     - intent: remerciement
     - action: utter_aurevoir
+
+
+- story: Modifier un commentaire de la réservation
+  steps:
+    - intent: modify_comment
+    - action: utter_ask_comment
+    - intent: saybabychair
+    - action: action_modify_comment
+
+
+- story: Afficher les informations de la réservation
+  steps:
+    - intent: show_reservation_info
+    - action: action_show_reservation_info

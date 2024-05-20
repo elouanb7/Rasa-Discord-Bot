@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-heure_reservation",
+      "2": "I-heure_reservation",
+      "3": "L-heure_reservation",
+      "4": "U-heure_reservation",
+      "5": "B-nbr_place_reservation",
+      "6": "I-nbr_place_reservation",
+      "7": "L-nbr_place_reservation",
+      "8": "U-nbr_place_reservation",
+      "9": "B-reservation_name",
+      "10": "I-reservation_name",
+      "11": "L-reservation_name",
+      "12": "U-reservation_name",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-heure_reservation": 1,
+      "I-heure_reservation": 2,
+      "L-heure_reservation": 3,
+      "U-heure_reservation": 4,
+      "B-nbr_place_reservation": 5,
+      "I-nbr_place_reservation": 6,
+      "L-nbr_place_reservation": 7,
+      "U-nbr_place_reservation": 8,
+      "B-reservation_name": 9,
+      "I-reservation_name": 10,
+      "L-reservation_name": 11,
+      "U-reservation_name": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

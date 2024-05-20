@@ -7,21 +7,36 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 
-# from typing import Any, Text, Dict, List
-#
-# from rasa_sdk import Action, Tracker
-# from rasa_sdk.executor import CollectingDispatcher
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
+from rasa_sdk import Action
+from rasa_sdk.events import SlotSet
+
+
+class ActionModifyComment(Action):
+    def name(self):
+        return "action_modify_comment"
+
+    def run(self, dispatcher, tracker, domain):
+        comment = next(tracker.get_latest_entity_values("commentaire"), None)
+        if comment:
+            dispatcher.utter_message(text="Votre commentaire a été modifié.")
+            return [SlotSet("table_reservation_comment", comment)]
+        else:
+            dispatcher.utter_message(text="Je n'ai pas compris votre commentaire. Pouvez-vous répéter ?")
+            return []
+
+
+class ActionShowReservationInfo(Action):
+    def name(self):
+        return "action_show_reservation_info"
+
+    def run(self, dispatcher, tracker, domain):
+        first_name = tracker.get_slot("reservation_name")
+        comment = tracker.get_slot("table_reservation_comment")
+        heure = tracker.get_slot("heure_reservation")
+        place = tracker.get_slot("nbr_place_reservation")
+        dispatcher.utter_message(text=f"Voici les informations de votre réservation :"
+                                      f"\nPrénom : {first_name}"
+                                      f"\nPlace: {place}"
+                                      f"\nHeure de réservation : {heure}"
+                                      f"\n Commentaire : {comment}")
+        return []
