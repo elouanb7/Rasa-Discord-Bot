@@ -1,16 +1,61 @@
-# This is a sample Python script.
-
-# Press Maj+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+import os
+import glob
+import nextcord
+from nextcord.ext import commands
+from rasa.core.agent import Agent
+import asyncio
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+# Function to find the latest Rasa model
+def find_model():
+    path = os.path.join('models', f'*.tar.gz')
+    models = glob.glob(path)
+    return models[0]
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# Créer une instance de l'agent Rasa
+agent = Agent.load(find_model())
+
+# Configure the Discord bot
+intents = nextcord.Intents.default()
+intents.messages = True
+intents.message_content = True
+bot = commands.Bot(command_prefix="!", intents=intents)
+
+# Event to indicate the bot is ready
+@bot.event
+async def on_ready():
+    print(f"{bot.user} is ready to be used!")
+
+
+# Handle messages and send them to Rasa
+@bot.event
+async def on_message(message):
+    print(message)
+    print(message.content)
+
+    # Ignore messages from the bot itself to prevent infinite loops
+    if message.author == bot.user or message.channel.type != nextcord.ChannelType.text or message.channel.name != "channel-test":
+        return
+
+    # Check if message.content is not empty
+    if not message.content.strip():
+        return
+
+    # Get the response from the Rasa model
+    responses = await agent.handle_text(message.content)
+
+    # Print the response for debugging
+    print(f"User message: {message.content}")
+    print(f"Rasa response: {responses}")
+
+    # Send the response back to the Discord channel
+    if responses and len(responses) > 0:
+        for response in responses:
+            await message.channel.send(response.get("text", "No response text found"))
+
+    # Ensure other commands are processed
+    await bot.process_commands(message)
+
+
+# Lancer le bot
+bot.run("BOT_TOKEN")
