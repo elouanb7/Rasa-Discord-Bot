@@ -34,7 +34,7 @@ async def on_message(message):
     print(message.content)
 
     # Ignore messages from the bot itself to prevent infinite loops
-    if message.author == bot.user or message.channel.type != nextcord.ChannelType.text or message.channel.name != "channel-test":
+    if message.author == bot.user:
         return
 
     # Check if message.content is not empty
