@@ -8,7 +8,7 @@
 
 ## Pour lancer rasa avec le bot discord
 
-- Remplacer dansn le script 'venv-script.ps1' le '$project_dir' par votre répertoire local
+- Remplacer dans le script 'venv-script.ps1' le '$project_dir' par votre répertoire local
 - Lancer le script
 - Entrer dans le venv si vous n'y etes pas déjà
 - Changer le token du bot dans le code par 'MTI0MDIwODQ5ODAxMzUwNzY4NA.GZXMen.8GmRR_KtdY-ZHVKcJK52Sla8ULG4XO8iOvxVPM'
